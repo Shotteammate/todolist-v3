@@ -3,22 +3,23 @@ import './App.css';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
+import uuid from 'uuid';
 
 export class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuid.v4(),
         title: "todo testing item 1",
         completed: false,
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: "todo testing item 2",
         completed: true,
       },
       {
-        id: 3,
+        id: uuid.v4(),
         title: "todo testing item 3",
         completed: false,
       }
@@ -43,12 +44,23 @@ export class App extends Component {
     this.setState({todos: this.state.todos.filter((todo) => todo.id !== id)});
   }
 
+  //callback user input(title) from AddTodo component
+  //Add todo
+  AddTodoCallback = (title) => {
+    console.log("AddTodo title: " + title);
+    const newTodo = {
+      id: uuid.v4(),
+      title: title,
+      completed: false
+    }
+    this.setState({todos: [...this.state.todos, newTodo]});
+  }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <AddTodo />
+        <AddTodo callbackFromParent={this.AddTodoCallback}/>
         <Todos 
           todos={this.state.todos} 
           markComplete={this.markComplete}
