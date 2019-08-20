@@ -14,19 +14,24 @@ export class TodoItem extends Component {
     const {id, title, completed} = this.props.todo;
 
     return (
-      <p style={this.getStyle()}>
+      <div style={this.getStyle()}>
         <input 
           type="checkbox"
           checked={completed}
-          onChange ={this.props.markComplete.bind(this,id)}/> {'   '}
-        {title}
+          onChange ={this.props.markComplete.bind(this,id)}/>
+        <span style={spanStyle} >{title}</span>
         <button 
           className="delBtnStyle"
           onClick={this.props.deleteTodo.bind(this,id)}
         >X</button>
-      </p>
+      </div>
     );
   }
+}
+
+const spanStyle = {
+  wordWrap: 'break-word',
+  padding: '10px',
 }
 
 export default TodoItem
