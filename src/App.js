@@ -26,8 +26,21 @@ export class App extends Component {
   }
 
   //toggle todo completed
-  markComplete = () => {
-    console.log("click");
+  markComplete = (id) => {
+    //console.log("checkbox clicked id: " + id);
+    this.setState({todos: this.state.todos.map((todo) => {
+      if(todo.id === id){
+        todo.completed = !todo.completed;
+      }
+      // map will return an attay to todos
+      return todo;
+    })});
+  }
+
+  // delete todo item
+  deleteTodo = (id) => {
+    //console.log("delete clicked id: " + id);
+    this.setState({todos: this.state.todos.filter((todo) => todo.id !== id)});
   }
 
 
@@ -38,7 +51,8 @@ export class App extends Component {
         <AddTodo />
         <Todos 
           todos={this.state.todos} 
-          markComplete={this.markComplete}/>
+          markComplete={this.markComplete}
+          deleteTodo={this.deleteTodo} />
       </div>
     )
   }
