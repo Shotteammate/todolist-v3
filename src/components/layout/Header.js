@@ -6,7 +6,7 @@ export class Header extends Component {
     return (
       <header className='headerStyle'>
         <h1>Todo List</h1>
-        <Link className='linkStyle' to="/todolist-v3">Home</Link> | <Link className='linkStyle' to="/todolist-v3/about">About</Link> 
+        <Link className='linkStyle' to="/">Home</Link> | <Link className='linkStyle' to="/about">About</Link> 
       </header>
     )
   }
