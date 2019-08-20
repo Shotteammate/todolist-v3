@@ -1,26 +1,28 @@
 import React, { Component } from 'react'
 
 export class TodoItem extends Component {
+  getStyle = () => {
+    return {
+      background: '#f4f4f4',
+      padding: '10px',
+      borderBottom:'1px #ccc solid',
+      textDecoration: this.props.todo.completed? 'line-through': 'none'
+    }
+  }
+
   render() {
+    const {id, title, completed} = this.props.todo;
+
     return (
-      <div>
-        <p>
-          <input type="checkbox"/> {'   '}
-          todo testing item 1
-          <button>X</button>
-        </p>
-        <p>
-          <input type="checkbox"/> {'   '}
-          todo testing item 2
-          <button>X</button>
-        </p>
-        <p>
-          <input type="checkbox"/> {'   '}
-          todo testing item 3
-          <button>X</button>
-        </p>
-      </div>
-    )
+      <p style={this.getStyle()}>
+        <input 
+          type="checkbox"
+          checked={completed}
+          onChange ={this.props.markComplete}/> {'   '}
+        {title}
+        <button className="delBtnStyle">X</button>
+      </p>
+    );
   }
 }
 

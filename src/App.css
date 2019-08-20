@@ -13,3 +13,21 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+.headerStyle {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 8px;
+}
+
+/* delete item btn in TodoItem*/
+.delBtnStyle {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20%;
+  cursor: pointer;
+  float: right;
+}
