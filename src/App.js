@@ -105,7 +105,7 @@ export class App extends Component {
           <div className="container">
             <Header />
             
-              <Route exact path='/' render={props => (
+              <Route exact path='/todolist-v3' render={props => (
                 <React.Fragment>
                   <AddTodo callbackFromParent={this.AddTodoCallback}/>
                   <DelAllAndSelectAll 
@@ -119,7 +119,7 @@ export class App extends Component {
                     deleteTodo={this.deleteTodo} />
                 </React.Fragment>
               )} />
-              <Route path='/about' component={About} />
+              <Route path='/todolist-v3/about' component={About} />
           </div>
         </div>
       </Router>
