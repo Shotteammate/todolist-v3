@@ -5,6 +5,8 @@ import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
 import uuid from 'uuid';
 import DelAllAndSelectAll from './components/DelAllAndSelectAll';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
+import About from './components/pages/About';
 
 export class App extends Component {
   constructor(props){
@@ -55,7 +57,7 @@ export class App extends Component {
   //callback user input(title) from AddTodo component
   //Add todo
   AddTodoCallback = (title) => {
-    console.log("AddTodo title: " + title);
+    //console.log("AddTodo title: " + title);
     const newTodo = {
       id: uuid.v4(),
       title: title,
@@ -98,21 +100,29 @@ export class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="container">
-          <Header />
-          <AddTodo callbackFromParent={this.AddTodoCallback}/>
-          <DelAllAndSelectAll 
-            todos={this.state.todos} 
-            handleSelectAll={this.handleSelectAll} 
-            handleDeleteAll={this.handleDeleteAll}
-            selectAllBtnValue={this.selectAllBtnValue}/>
-          <Todos 
-            todos={this.state.todos} 
-            markComplete={this.markComplete}
-            deleteTodo={this.deleteTodo} />
+      <Router>
+        <div className="App">
+          <div className="container">
+            <Header />
+            
+              <Route exact path='/todolist-v3' render={props => (
+                <React.Fragment>
+                  <AddTodo callbackFromParent={this.AddTodoCallback}/>
+                  <DelAllAndSelectAll 
+                    todos={this.state.todos} 
+                    handleSelectAll={this.handleSelectAll} 
+                    handleDeleteAll={this.handleDeleteAll}
+                    selectAllBtnValue={this.selectAllBtnValue}/>
+                  <Todos 
+                    todos={this.state.todos} 
+                    markComplete={this.markComplete}
+                    deleteTodo={this.deleteTodo} />
+                </React.Fragment>
+              )} />
+              <Route path='/todolist-v3/about' component={About} />
+          </div>
         </div>
-      </div>
+      </Router>
     )
   }
 }

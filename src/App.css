@@ -7,6 +7,7 @@
 body {
   font-family: Arial, Helvetica, Sans-serif;
   line-height: 1.4;
+  background-color: rgb(218, 213, 213);
 }
 
 a {
@@ -14,11 +15,17 @@ a {
   text-decoration: none;
 }
 
+/* header style*/
 .headerStyle {
   background: #333;
   color: white;
   text-align: center;
   padding: 8px;
+}
+
+.linkStyle {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* delete item btn in TodoItem*/
@@ -39,7 +46,8 @@ a {
 
 
 .container {
-  padding: 0 10px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .submitBtn {
@@ -69,3 +77,4 @@ a {
 .seldelBtn:hover {
   background: #666;
 }
+
