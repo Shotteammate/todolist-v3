@@ -25,7 +25,7 @@ export class TodoItem extends Component {
             onChange ={this.props.markComplete.bind(this,id)}/>
         </div>
         <div style={titleStyle}>{title}</div>
-        <div style={{marginLeft: 'auto'}}>
+        <div style={{marginLeft: 'auto',flexGrow: 1}}>
           <button 
             className="delBtnStyle"
             onClick={this.props.deleteTodo.bind(this,id)}
@@ -37,7 +37,7 @@ export class TodoItem extends Component {
 }
 
 const titleStyle = {
- 
+  flexGrow: 2,
   display: 'inline-block',
   wordBreak: 'break-word',
   margin: '0 10px'
