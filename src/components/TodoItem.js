@@ -7,6 +7,8 @@ export class TodoItem extends Component {
       padding: '10px',
       borderBottom:'1px #ccc solid',
       textDecoration: this.props.todo.completed? 'line-through': 'none',
+      display: 'flex',
+      justifyContent:'space-around',
     }
   }
 
@@ -15,23 +17,29 @@ export class TodoItem extends Component {
 
     return (
       <div style={this.getStyle()}>
-        <input 
-          type="checkbox"
-          checked={completed}
-          onChange ={this.props.markComplete.bind(this,id)}/>
-        <span style={spanStyle} >{title}</span>
-        <button 
-          className="delBtnStyle"
-          onClick={this.props.deleteTodo.bind(this,id)}
-        >X</button>
+        <div style={{flexGrow:1}}>
+          <input 
+            type="checkbox"
+            checked={completed}
+            onChange ={this.props.markComplete.bind(this,id)}/>
+        </div>
+        <div style={titleStyle}>{title}</div>
+        <div style={{flexGrow:1}}>
+          <button 
+            className="delBtnStyle"
+            onClick={this.props.deleteTodo.bind(this,id)}
+          >X</button>
+        </div>
       </div>
     );
   }
 }
 
-const spanStyle = {
-  wordWrap: 'break-word',
-  padding: '10px',
+const titleStyle = {
+  flexGrow:2, 
+  display: 'inline-block',
+  wordBreak: 'break-word',
+  margin: '0 10px'
 }
 
 export default TodoItem
