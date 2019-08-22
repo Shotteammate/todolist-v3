@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/todolist-v3/static/css/main.112762e7.chunk.css",
-    "main.js": "/todolist-v3/static/js/main.a2092e1f.chunk.js",
-    "main.js.map": "/todolist-v3/static/js/main.a2092e1f.chunk.js.map",
+    "main.js": "/todolist-v3/static/js/main.ed3cbd8a.chunk.js",
+    "main.js.map": "/todolist-v3/static/js/main.ed3cbd8a.chunk.js.map",
     "runtime~main.js": "/todolist-v3/static/js/runtime~main.3207bc3f.js",
     "runtime~main.js.map": "/todolist-v3/static/js/runtime~main.3207bc3f.js.map",
     "static/js/2.b5a53c56.chunk.js": "/todolist-v3/static/js/2.b5a53c56.chunk.js",
     "static/js/2.b5a53c56.chunk.js.map": "/todolist-v3/static/js/2.b5a53c56.chunk.js.map",
     "index.html": "/todolist-v3/index.html",
-    "precache-manifest.8c2031bd701d9702eb7e422db7cbf2a4.js": "/todolist-v3/precache-manifest.8c2031bd701d9702eb7e422db7cbf2a4.js",
+    "precache-manifest.f6f9e3f1a838f6f1a6fcd81c3ed8eb91.js": "/todolist-v3/precache-manifest.f6f9e3f1a838f6f1a6fcd81c3ed8eb91.js",
     "service-worker.js": "/todolist-v3/service-worker.js",
     "static/css/main.112762e7.chunk.css.map": "/todolist-v3/static/css/main.112762e7.chunk.css.map"
   }
